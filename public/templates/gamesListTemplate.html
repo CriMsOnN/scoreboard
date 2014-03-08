@@ -1,0 +1,13 @@
+<h1>Current Games:</h1>
+<% _.each(games, function(num, key) { 	%>
+	<span class="listing-heading"><%- key %></span>
+		<ul class="games-list">
+		<% _.each(num, function(game) { 	%>
+			<li>
+				<a href="#/games/<%- game.slug %>"><%- game.title %></a>
+			</li>
+		<% }); %>		
+		</ul>
+<% }); %>
+
+<div class="pagepadding"></div>

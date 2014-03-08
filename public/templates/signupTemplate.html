@@ -1,0 +1,30 @@
+<h1>Signup:</h1>
+<form action="/auth/signup" id="signup-form">
+	
+	<div class="form-element">
+		<label for="name">
+			Your Name: <dfn title="required">*</dfn>
+		</label>
+		<input id="name"  type="text"  name="title" required="required" placeholder="Jane Doe" value="<%- name %>" />
+	</div>
+	
+	<div class="form-element">
+		<label for="team">
+			Email: <dfn title="required">*</dfn>
+		</label>
+		<input id="email"  name="email" type="text"   required="required" placeholder="you@awesome.com" />
+	</div>
+	
+	<div class="form-element">
+		<label for="password">
+			Password: <dfn title="required">*</dfn>
+		</label>
+		<input id="password"  name="password" type="password"   required="required" placeholder="••••••••"  />
+	</div>
+	
+	<div class="form-element">
+		<button class=" submit" id="submit-new-user">create account now!</button>
+	</div>
+	
+</form>
+<div class="pagepadding"></div>
