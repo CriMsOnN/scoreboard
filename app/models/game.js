@@ -4,7 +4,7 @@ var mongoose = require('mongoose')
 	, Schema = mongoose.Schema
 	, Team;
 
-
+console.log( 'game model loaded ')
 
 
 /**
