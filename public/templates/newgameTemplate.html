@@ -1,0 +1,28 @@
+<h1>Create a Game:</h1>
+<form action="#" id="new-game-form">
+	<div class="form-element">
+		<label for="title">
+			Game Title: <dfn title="required">*</dfn>
+		</label>
+		<input id="title"  type="text"  name="title" required="required" placeholder="<%- title %>" value="<%- title %>" />
+	</div>
+	<div class="form-element">
+		<label for="team">
+			Add Teams: <dfn title="required">*</dfn>
+		</label>
+		<input id="team"  name="team" placeholder="add a team" type="text"  />
+		<button id="add-team">add</button>
+		<div id="teams">
+			<button class="hidden submit" id="submit-new-game">create game now!</button>
+			<ul id="teams-list" >
+				<% _.each(teams, function(team, key) { 	%>
+					<li>
+						<span class="team-name"><%- team.name %></span>
+						<span class="remove-team">X</span>
+					</li>
+				<% }); %>
+			</ul>
+		</div>
+	</div>
+</form>
+<div class="pagepadding"> </div>
