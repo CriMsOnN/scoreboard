@@ -24,7 +24,7 @@ exports.init = function(_io, config) {
 *======================================
 **/
 var initWebSocket = function(_io){
-	
+	console.log("games.js::  initWebSocket");
 	_io.sockets.on('connection', function (socket) {
 		console.log("games.js::  initWebSocket:  connection");
 		socket.on('join_game', function (data) {
