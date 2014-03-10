@@ -37,8 +37,6 @@ define(['jquery', 'underscore', 'backbone'], function($, _, Backbone) {
 		
 		// data back from websocket
 		updateScore: function(data) {
-			console.log("UPDATED:::  " );
-			console.log(data);
 			if (this.get('_id') == data._id) {
 				this.set(data);
 			}

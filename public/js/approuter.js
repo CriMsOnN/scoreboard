@@ -21,7 +21,7 @@ define(['jquery', 'underscore', 'backbone'], function($, _, Backbone){
 
         initialize: function () {
             this.$navItems = $('.nav-btn');
-			this.socket =  io.connect('http://162.243.72.69/');
+			this.socket =  io.connect('http://localhost/');
         },
 
 		

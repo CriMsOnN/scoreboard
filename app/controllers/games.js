@@ -24,27 +24,21 @@ exports.init = function(_io, config) {
 *======================================
 **/
 var initWebSocket = function(_io){
-	console.log("games.js::  initWebSocket");
 	_io.sockets.on('connection', function (socket) {
-		console.log("games.js::  initWebSocket:  connection");
 		socket.on('join_game', function (data) {
-			console.log("games.js::  initWebSocket:  connected..  data.game_id = " + data.game_id);
 			
 		 	socket.join(data.game_id);
 			_io.sockets.socket(socket.id).emit("game_joined"); 
 		});
 
-		
 		socket.on('leave_game', function (data) {
 		 	socket.leave(data.game_id);
 			_io.sockets.socket(socket.id).emit("game_exited"); 
 		});
 		
-		
 		socket.on('update_score', function(data){
 			var query = Game.findById(data.game_id, function(err, game){
 				if( err ) console.log(err)
-				console.log("games.js::  initWebSocket:  update_score..  findById:: game= " + game);
 				game.updateScore(data, function(_team){
 					_io.sockets.in(data.game_id).emit('score_updated', _team);
 				})
