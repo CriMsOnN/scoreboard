@@ -14,21 +14,6 @@ console.log( 'game model loaded ')
  **/
 
 
-var TeamSchema = new Schema({
-	name: String,
-	score: Number
-});
-
-TeamSchema.path('name').validate(function(name) {
-	return name.length > 0
-}, 'Teams must have a name');
-
-Team =  mongoose.model('TeamSchema	', TeamSchema);
-
-
-
-
-
 var GameSchema = new Schema({
 	title: {
 		type: String,
@@ -38,7 +23,7 @@ var GameSchema = new Schema({
 		type: String,
 		trim: true
 	},
-	teams: [TeamSchema],
+	teams: [Team],
 	createdAt: {
 		type: Date,
 		default: Date.now
@@ -109,4 +94,4 @@ GameSchema.statics = {
 
 
 
-module.exports =  mongoose.model('GameSchema', GameSchema);
+module.exports =  mongoose.model('Game', GameSchema);

@@ -14,4 +14,4 @@ TeamSchema.path('name').validate(function(name) {
 }, 'Teams must have a name');
 
 
-module.exports =  mongoose.model('TeamSchema	', TeamSchema);
+module.exports =  mongoose.model('Team', TeamSchema);
