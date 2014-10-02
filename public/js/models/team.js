@@ -17,7 +17,6 @@ define(['jquery', 'underscore', 'backbone'], function($, _, Backbone) {
 			this.socket.on('score_updated', this.updateScore);
 		},
 
-
 		// from view
 		addScore: function(n) {
 			var data = this.toJSON();

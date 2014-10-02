@@ -48,7 +48,6 @@ server = http.createServer(app).listen(app.get('port'), function () {
 
 
 
-
 /**
 *======================================
 *  ::: Open Web Socket ::: 
@@ -61,18 +60,6 @@ var io = require('socket.io').listen(server, {'log level':1});
 
 /**
 *======================================
-*  ::: INIT ::: 
-*======================================
-**/
-
-games.init(io,config);
-
-
-
-
-
-/**
-*======================================
 *  ::: Routes ::: 
 *======================================
 **/
@@ -80,3 +67,13 @@ app.get('/games', games.list);
 app.get('/games/:slug', games.load);
 app.post('/games', games.newGame);
 app.post('/users', users.signup);
+
+
+/**
+*======================================
+*  ::: INIT ::: 
+*======================================
+**/
+games.init(io,config);
+
+
